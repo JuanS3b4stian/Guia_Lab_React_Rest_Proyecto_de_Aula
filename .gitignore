@@ -1,0 +1,15 @@
+# Java / Maven
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# React
+**/node_modules/
+**/build/
+
+# Environment files
+**/.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
