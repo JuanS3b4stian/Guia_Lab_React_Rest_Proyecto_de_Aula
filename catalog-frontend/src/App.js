@@ -14,9 +14,12 @@ function App() {
 
   return (
     <main className="container py-4">
-      <h1 className="display-6 mb-4">Catálogo de libros</h1>
+      <header className="mb-4">
+        <h1 className="display-6 mb-1">Catálogo de libros</h1>
+        <p className="text-muted mb-0">Administra, consulta y busca tus libros.</p>
+      </header>
       <BookForm bookToEdit={bookToEdit} onSaved={handleSaved} />
-      <BookList refreshKey={refreshKey} onEdit={setBookToEdit} />
+      <BookList refreshKey={refreshKey} onEdit={setBookToEdit} onDeleted={() => setRefreshKey((key) => key + 1)} />
     </main>
   );
 }

@@ -19,6 +19,12 @@ public class BookService {
         return bookRepository.findAll();
     }
 
+    public List<Book> searchByName(String name) {
+        return name == null || name.isBlank()
+                ? findAll()
+                : bookRepository.findByNameContainingIgnoreCase(name.trim());
+    }
+
     public Book findById(Long id) {
         return bookRepository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException(id));
